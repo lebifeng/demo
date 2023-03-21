@@ -1,0 +1,19 @@
+.container {
+  min-height: 100vh;
+}
+
+.layout {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  margin-right: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
