@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout as DefaultLayout, Menu } from "antd";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate, useMatches } from "react-router-dom";
 import classes from "./index.module.css";
 
 const { Header, Content } = DefaultLayout;
 
-const Layout = () => {
+const Layout = (props) => {
+  const { menus = [] } = props;
+  const [activeKey, setActiveKey] = useState("");
+  const navigate = useNavigate();
+  const navigation = useMatches();
+  console.log("navigation", navigation);
+
+  const onClick = ({ key }) => {
+    setActiveKey(key);
+    navigate(key);
+  };
+
   return (
     <div className={classes.container}>
       <DefaultLayout className={classes.layout}>
@@ -13,20 +24,15 @@ const Layout = () => {
           <img className={classes.logo} src="src/assets/react.svg" />
           <Menu
             theme="dark"
+            items={menus}
             mode="horizontal"
-            defaultSelectedKeys={["2"]}
-            items={new Array(15).fill(null).map((_, index) => {
-              const key = index + 1;
-              return {
-                key,
-                label: `nav ${key}`,
-              };
-            })}
+            className={classes.menu}
+            selectedKeys={[activeKey]}
+            onSelect={onClick}
           />
         </Header>
         <Content style={{ padding: "0 24px" }}>
           <Outlet />
-          12313
         </Content>
       </DefaultLayout>
     </div>

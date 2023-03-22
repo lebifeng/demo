@@ -1,26 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import NotFound from "src/pages/404";
-import Layout from "./components/Layout";
-import HttpDemo from "src/pages/http-demo";
+import NotFound from "@/pages/404";
+import Layout from "@/components/Layout";
+import routers from "@/config/router";
 import "antd/dist/reset.css";
-
 import "./index.css";
 
-const router = createBrowserRouter([
+const menus = routers.map((e) => ({ key: e.path, label: e.label }));
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout menus={menus} />,
+      errorElement: <NotFound />,
+      children: [
+        {
+          errorElement: <NotFound />,
+          children: routers,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    errorComponent: <NotFound />,
-    children: [
-      {
-        path: "http",
-        element: <HttpDemo />,
-      },
-    ],
-  },
-]);
+    basename: "/app",
+  }
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
