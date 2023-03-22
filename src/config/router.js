@@ -4,6 +4,6 @@ export default [
   {
     path: 'http',
     label: 'HTTP',
-    lazy: () => lazyLoadComponent('../pages/http-demo/index'),
+    lazy: () => lazyLoadComponent('http-demo'),
   },
 ];

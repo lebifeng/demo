@@ -23,6 +23,7 @@
     "react/prop-types": "off",
     "jsx-quotes": "off",
     "no-unused-vars": "warn",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "no-console": "off"
   }
 }
