@@ -1,8 +1,8 @@
-import React from "react";
-import { Button } from "antd";
+import React from 'react';
+import { Button } from 'antd';
 
-const HttpDemo = () => {
+function HttpDemo() {
   return <Button>test</Button>;
-};
+}
 
 export default HttpDemo;

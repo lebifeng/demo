@@ -1,0 +1,16 @@
+{
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "dist", "es", "lib"],
+  "types": ["node", "jest"],
+  "compilerOptions": {
+    "jsx": "react",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "allowJs": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

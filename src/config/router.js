@@ -1,9 +1,9 @@
-import lazyLoadComponent from "./lazyLoadComponent";
+import lazyLoadComponent from './lazyLoadComponent';
 
 export default [
   {
-    path: "http",
-    label: "HTTP",
-    lazy: () => lazyLoadComponent("../pages/http-demo/index"),
+    path: 'http',
+    label: 'HTTP',
+    lazy: () => lazyLoadComponent('../pages/http-demo/index'),
   },
 ];
