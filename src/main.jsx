@@ -4,9 +4,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import NotFound from '@/pages/404';
 import Layout from '@/components/Layout';
 import routers from '@/config/router';
-import 'antd/dist/reset.css';
 
-import './index.css';
+import './index.module.css';
 
 const menus = routers.map((e) => ({ key: e.path, label: e.label }));
 

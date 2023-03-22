@@ -1,9 +1,9 @@
-import lazyLoadComponent from './lazyLoadComponent';
+import dynamicImport from './dynamicImport';
 
 export default [
   {
     path: 'http',
     label: 'HTTP',
-    lazy: () => lazyLoadComponent('http-demo'),
+    lazy: () => dynamicImport('http-demo'),
   },
 ];
