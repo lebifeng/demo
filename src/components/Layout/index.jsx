@@ -30,7 +30,7 @@ function Layout(props) {
             onSelect={onClick}
           />
         </Header>
-        <Content style={{ padding: '0 24px' }}>
+        <Content style={{ padding: '24px' }}>
           <Outlet />
         </Content>
       </DefaultLayout>

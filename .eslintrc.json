@@ -24,6 +24,8 @@
     "jsx-quotes": "off",
     "no-unused-vars": "warn",
     "import/extensions": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "import/prefer-default-export": "off",
+    "no-restricted-exports": "off"
   }
 }

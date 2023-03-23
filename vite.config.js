@@ -4,6 +4,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dynamicImportVariables from '@rollup/plugin-dynamic-import-vars';
 
+// postcss plugins
+import autoprefixer from 'autoprefixer';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -19,6 +22,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+    },
+  },
+  css: {
+    postcss: {
+      plugins: [autoprefixer],
     },
   },
 });
