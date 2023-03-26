@@ -1,0 +1,35 @@
+.container {
+  height: 200px;
+  background-color: #ccc;
+  padding-left: 200px;
+  padding-right: 150px;
+  overflow: hidden;
+}
+
+.left {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  margin-left: -100%;
+  position: relative;
+  left: -200px;
+}
+
+.content {
+  background-color: antiquewhite;
+  height: 200px;
+  width: 100%;
+}
+
+.right {
+  width: 150px;
+  height: 200px;
+  background-color: green;
+  margin-right: -150px;
+  position: relative;
+  right: 150px;
+}
+
+.item {
+  float: left;
+}

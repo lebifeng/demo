@@ -6,4 +6,9 @@ export default [
     label: 'HTTP',
     lazy: () => dynamicImport('http-demo'),
   },
+  {
+    path: 'double-wing-layout',
+    label: '双飞翼布局',
+    lazy: () => dynamicImport('double-wing-layout'),
+  },
 ];
