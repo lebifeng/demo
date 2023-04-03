@@ -11,4 +11,9 @@ export default [
     label: '双飞翼布局',
     lazy: () => dynamicImport('double-wing-layout'),
   },
+  {
+    path: 'web-component-demo',
+    label: 'Web Component',
+    lazy: () => dynamicImport('web-component'),
+  },
 ];

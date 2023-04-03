@@ -7,6 +7,18 @@
     <title>Vite + React</title>
   </head>
   <body>
+    <template id="my-dialog-template">
+      <div class="my-dialog">
+        <header class="title">123</header>
+        <main class="content">
+          <slot name="main"></slot>
+        </main>
+        <footer class="footer">
+          <button class="footer-btn ok">OK</button>
+          <button class="footer-btn cancel">Cancel</button>
+        </footer>
+      </div>
+    </template>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

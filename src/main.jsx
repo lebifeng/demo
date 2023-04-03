@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import NotFound from '@/pages/404';
-import Layout from '@/components/Layout';
+import NotFound from '@/pages/404/index';
+import Layout from '@/components/layout/index';
 import routers from '@/config/router';
+import '@/web-components/index';
 
 import './index.module.css';
 
