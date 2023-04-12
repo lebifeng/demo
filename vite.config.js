@@ -4,8 +4,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dynamicImportVariables from '@rollup/plugin-dynamic-import-vars';
 
-// postcss plugins
 import autoprefixer from 'autoprefixer';
+import VirtualRoutes from './src/plugins/vite-plugin-virtual-routes';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,6 +14,7 @@ export default defineConfig({
     dynamicImportVariables({
       include: ['./src/'],
     }),
+    VirtualRoutes(),
   ],
   base: '/app/',
   server: {
