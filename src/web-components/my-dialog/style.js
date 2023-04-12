@@ -24,6 +24,7 @@ export const myDialogStyle = `
 
   .content {
     max-height: 240px;
+    margin: 12px 0;
   }
 
   .footer {

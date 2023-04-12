@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'antd';
 
 // random paragraph
@@ -8,23 +8,31 @@ const content =
 function WebComponentDemo() {
   const [visible, setVisible] = useState(true);
 
+  useEffect(() => {
+    const target = document.getElementById('my-dialog');
+    const onOk = () => {
+      console.log('ok');
+      setVisible(false);
+    };
+    const onCancel = () => {
+      console.log('cancel');
+      setVisible(false);
+    };
+    target.addEventListener('onOk', onOk);
+    target.addEventListener('onCancel', onCancel);
+
+    return () => {
+      target.removeEventListener('onOk', onOk);
+      target.removeEventListener('onCancel', onCancel);
+    };
+  }, []);
+
   return (
     <div>
       <Button onClick={() => setVisible(true)}>Show Dialog</Button>
       <Button onClick={() => setVisible(false)}>Hide Dialog</Button>
-      <my-dialog
-        title='title'
-        visible={visible}
-        onOk={() => {
-          alert('ok');
-          setVisible(false);
-        }}
-        onCancel={() => {
-          alert('cancel');
-          setVisible(false);
-        }}
-      >
-        <p slot='main'>{content}</p>
+      <my-dialog id='my-dialog' title='title' visible={visible}>
+        {content}
       </my-dialog>
     </div>
   );
