@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import NotFound from '@/pages/404/index';
 import Layout from '@/components/layout/index';
-import routers from '@/config/router';
 import '@/web-components/index';
+// eslint-disable-next-line import/no-unresolved
 import virtualRouters from 'virtual:routes';
 
 import './index.module.css';
 
-console.log('routers1', virtualRouters);
-
-const menus = routers.map((e) => ({ key: e.path, label: e.label }));
+const menus = virtualRouters
+  .filter((e) => e.label !== '404')
+  .map((e) => ({ key: e.path, label: e.label }));
 
 const router = createBrowserRouter(
   [
@@ -22,7 +22,7 @@ const router = createBrowserRouter(
       children: [
         {
           errorElement: <NotFound />,
-          children: routers,
+          children: virtualRouters,
         },
       ],
     },

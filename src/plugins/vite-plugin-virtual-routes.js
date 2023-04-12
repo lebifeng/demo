@@ -10,16 +10,24 @@ export default function virtualRoutesPlugin() {
     enforce: 'pre',
     resolveId(id) {
       if (id === virtualModuleId) {
-        const dirs = fs.read;
-        console.log(json);
         return resolvedVirtualModuleId;
       }
       return null;
     },
     load(id) {
       if (id === resolvedVirtualModuleId) {
+        const dirs = fs.readdirSync(path.resolve(__dirname, '../pages'));
+
         return `
-          export default [];
+          import dynamicImport from '@/utils/dynamicImport'
+          
+          const dirs = ${JSON.stringify(dirs)};
+          const routes = dirs.map(dir => ({
+            path: dir,
+            label: dir,
+            lazy: () => dynamicImport(dir)
+          }))
+          export default routes;
         `;
       }
       return null;
