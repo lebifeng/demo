@@ -27,6 +27,7 @@ export default function virtualRoutesPlugin() {
             label: dir,
             lazy: () => dynamicImport(dir)
           }))
+          
           export default routes;
         `;
       }
