@@ -19,15 +19,15 @@ export default function virtualRoutesPlugin() {
         const dirs = fs.readdirSync(path.resolve(__dirname, '../pages'));
 
         return `
-          import dynamicImport from '@/utils/dynamic-import'
+          import dynamicImport from '@/utils/dynamic-import';
           
           const dirs = ${JSON.stringify(dirs)};
           const routes = dirs.map(dir => ({
             path: dir,
             label: dir,
             lazy: () => dynamicImport(dir)
-          }))
-          
+          }));
+
           export default routes;
         `;
       }
