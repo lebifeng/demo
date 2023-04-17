@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'antd';
+import { Button, Space } from 'antd';
 
 // random paragraph
 const content =
@@ -29,8 +29,10 @@ function WebComponentDemo() {
 
   return (
     <div>
-      <Button onClick={() => setVisible(true)}>Show Dialog</Button>
-      <Button onClick={() => setVisible(false)}>Hide Dialog</Button>
+      <Space>
+        <Button onClick={() => setVisible(true)}>Show Dialog</Button>
+        <Button onClick={() => setVisible(false)}>Hide Dialog</Button>
+      </Space>
       <my-dialog id='my-dialog' title='title' visible={visible}>
         {content}
       </my-dialog>
