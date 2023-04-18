@@ -1,0 +1,11 @@
+.main {
+  width: 200px;
+  height: 200px;
+  padding: 12px;
+  background-color: lightblue;
+  color: aqua;
+}
+
+.main :global(.item) {
+  font-size: 22px;
+}

@@ -1,0 +1,9 @@
+.child {
+  height: 100%;
+  color: red;
+  background-color: antiquewhite;
+}
+
+:global(.item) {
+  font-size: 18px;
+}
